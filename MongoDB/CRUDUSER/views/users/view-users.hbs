@@ -1,0 +1,26 @@
+
+
+<h3><a href="/user/" class="btn btn-secondary btn-sm">ADD USERS</a>DANH SÁCH NGƯỜI DÙNG</h3>
+
+<table class="table table-bordered">
+    <tr>
+        <th>FULL NAME</th>
+        <th>EMAIL</th>
+        <th>PASSWORD</th>
+        <th>PHONE</th>
+        <th>ADDRESS</th>
+        <th>ACTION</th>
+    </tr>
+    {{#each users}}
+    <tr>
+        <td>{{this.fullName}}</td>
+        <td>{{this.email}}</td>
+        <td>{{this.password}}</td>
+        <td>{{this.phone}}</td>
+        <td>{{this.address}}</td>
+        <td><a href="/user/edit/{{this._id}}" class="btn btn-primary btn-sm">Edit</a> |
+            <a href="/user/delete/{{this._id}}" onclick="return confirm('Bạn có chắc chắn không?')" class="btn btn-danger btn-sm">Del</a>
+        </td>
+    </tr>
+    {{/each}}
+</table>
